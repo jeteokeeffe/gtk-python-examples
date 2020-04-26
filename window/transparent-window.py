@@ -14,8 +14,10 @@ from gi.repository import Gtk, Gdk
 class TransparentWindow(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self)
+        
 
         self.set_size_request(300, 220)
+        self.set_title("Transparent Example")
 
         self.connect('destroy', Gtk.main_quit)
         self.connect('draw', self.draw)
