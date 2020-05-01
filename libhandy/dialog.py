@@ -16,9 +16,10 @@ Handy.init()
 
 window = Gtk.Window(title="LibHandy Dialog Example")
 window.set_border_width(10)
+window.set_default_size(400, 400)
 
     # https://lazka.github.io/pgi-docs/#Gtk-3.0/classes/Label.html
-label = Gtk.Label.new("This your dialog")
+label = Gtk.Label.new("This your mobile friendly dialog")
 
     
     # https://lazka.github.io/pgi-docs/#Handy-0.0/classes/Dialog.html
