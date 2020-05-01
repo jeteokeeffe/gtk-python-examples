@@ -1,5 +1,7 @@
 # Examples
 
+Tiny python snippets of gtk/libhandy functionality.
+
 ### Dialer App
 ![Dialer Image](https://github.com/jeteokeeffe/gtk-python-examples/raw/master/libhandy/dialer.png)
 
