@@ -17,13 +17,6 @@ def main():
     commanditem.set_label('My notes')
     commanditem.connect('activate', notes)
     menu.append(commanditem)
-
-        # Deprecated 
-        # https://lazka.github.io/pgi-docs/Gtk-3.0/classes/ImageMenuItem.html
-    quititem = Gtk.ImageMenuItem.new()
-    quititem.set_label('quit')
-    quititem.connect('activate', quit)
-    menu.append(quititem)
     
 
     exititem = Gtk.MenuItem.new()
