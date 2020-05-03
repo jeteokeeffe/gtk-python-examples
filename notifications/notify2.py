@@ -38,5 +38,3 @@ notification.add_action(
     # https://lazka.github.io/pgi-docs/Notify-0.7/classes/Notification.html#Notify.Notification.show
 notification.show()
 
-    # 
-Notify.uninit()

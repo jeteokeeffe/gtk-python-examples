@@ -16,5 +16,3 @@ Hello = Notify.Notification.new("Hello world", "This is an example notification.
     # https://lazka.github.io/pgi-docs/Notify-0.7/classes/Notification.html#Notify.Notification.show
 Hello.show()
 
-
-Notify.uninit()
