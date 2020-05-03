@@ -1,4 +1,8 @@
 # Python Notification Examples
 
 
-![Notify Example](https://octodex.github.com/images/yaktocat.png)
+### Notify1
+![Notify Example](https://github.com/jeteokeeffe/gtk-python-examples/raw/master/notifications/notifiy1.png)
+
+### Notify2
+![Notify Example](https://github.com/jeteokeeffe/gtk-python-examples/raw/master/notifications/notifiy2.png)
