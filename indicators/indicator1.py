@@ -14,13 +14,14 @@ def main():
 
         # https://lazka.github.io/pgi-docs/index.html#Gtk-3.0/classes/MenuItem.html#Gtk.MenuItem
     commanditem = Gtk.MenuItem.new()
-    commanditem.set_label('My notes')
+    commanditem.set_label('My Notes')
     commanditem.connect('activate', notes)
     menu.append(commanditem)
     
 
+        # https://lazka.github.io/pgi-docs/index.html#Gtk-3.0/classes/MenuItem.html#Gtk.MenuItem
     exititem = Gtk.MenuItem.new()
-    exititem.set_label('exit')
+    exititem.set_label('Exit')
     exititem.connect('activate', quit)
     menu.append(exititem)
 
