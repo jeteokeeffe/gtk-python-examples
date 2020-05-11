@@ -38,12 +38,28 @@ class App(Gtk.Application):
 
         win.show_all()
 
-    def on_notify(self, event, data):
+    def on_notify(self, widget, event):
+        if event.state & Gdk.ModifierType.BUTTON1_MASK:
+            self.draw_brush(widget, event.x, event.y)
 
-        print("notify")
 
-    def on_configure(self, event, data):
-        #self.surface = Gdk.Window()
+    def on_configure(self, widget, event):
+        """
+        widget      drawingarea object
+        event       
+        """
+        #if self.surface is not None:
+        #    del self.surface
+        #    self.surface = None
+
+            # GDK Window
+        win = widget.get_window()
+        self.surface = win.create_similar_surface(cairo.CONTENT_COLOR, 200, 200)
+
+        ctx = cairo.Context(self.surface)
+        ctx.set_source_rgb(1,1,1)
+        ctx.paint()
+
         print("configure")
 
     def on_press(self, draw, event):
@@ -52,20 +68,20 @@ class App(Gtk.Application):
 
 
     def on_draw(self, widget, ctx):
-        print("draw")
+        ctx.set_source_surface(self.surface, 0, 0)
+        ctx.paint()
 
 
     def draw_brush(self, draw, x, y):
 
-        surface = cairo.ImageSurface(cairo.FORMAT_ARGB32, 200, 200)
-        ctx = cairo.Context(surface)
+        ctx = cairo.Context(self.surface)
 
         ctx.rectangle(x - 3, y - 3, 6, 6)
         ctx.fill()
 
-
         draw.queue_draw_area(x - 3, y - 3, 6, 6)
         print("brush {} {}".format(x, y))
+
 
 
 class AppWindow(Gtk.ApplicationWindow):
