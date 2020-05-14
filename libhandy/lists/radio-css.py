@@ -25,8 +25,10 @@ class MyWindow(Gtk.Window):
             # Create List Box
             # https://lazka.github.io/pgi-docs/Gtk-3.0/classes/ListBox.html 
         box = Gtk.ListBox()
-            # Important to map css
+            # Map css (round the corners of the listbox)
         box.set_name("myround")
+            # Set min size of the list box
+        box.set_size_request(250,250)
         style = box.get_style_context()
         style.add_provider(provider, Gtk.STYLE_PROVIDER_PRIORITY_USER)
         box.set_selection_mode(Gtk.SelectionMode.NONE)
@@ -40,8 +42,11 @@ class MyWindow(Gtk.Window):
         box.add(self.addrow("Chrome"))
         box.add(self.addrow("Opera"))
 
+        outerbox = Gtk.Box()
+        outerbox.set_center_widget(box)
+
             # Add List box to main window
-        self.add(box)
+        self.add(outerbox)
 
     def addrow(self, title):
             # https://lazka.github.io/pgi-docs/Gtk-3.0/classes/RadioButton.html

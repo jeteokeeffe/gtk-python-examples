@@ -5,10 +5,22 @@ gi.require_version('Gtk', '3.0')
 
 from gi.repository import Gtk, Handy, Gio, GObject
 
+class Flatpak(GObject.GObject):
+    name = GObject.Property(type=str)
+    repo = GObject.Property(type=str)
+
+    def __init__(self, name, repo):
+        GObject.GObject.__init__(self)
+        self.name = name
+        self.repo = repo
+
 
 def button_clicked(btn):
     print("button clicked")
 
+def bind_model_func(flatpak):
+    print(flatpak.name)
+    return flatpak.name
 
     # https://lazka.github.io/pgi-docs/#Handy-0.0/functions.html#Handy.init 
 Handy.init()
@@ -31,7 +43,11 @@ row1.set_subtitle("this is a subtitle")
 row1.add_action(button)
 
 
-#val1 = Handy.EnumValueObject()
+    # Create List Store
+store = Gio.ListStore()
+store.append(Flatpak("flatseal", "flathub"))
+store.append(Flatpak("music", "flathub"))
+
 
     # Build Combo Row
     # 
@@ -39,7 +55,7 @@ row2 = Handy.ComboRow()
 row2.set_icon_name('face-wink')
 row2.set_title("Combo Row")
 row2.set_subtitle("this is a subtitle")
-#row2.bind_model(model)
+row2.bind_name_model(store, bind_model_func)
 
 label = Gtk.Label.new("This is shown when expanded. This is hidden when not expanded")
 
