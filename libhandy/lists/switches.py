@@ -13,8 +13,9 @@ class MyWindow(Gtk.Window):
             # https://lazka.github.io/pgi-docs/Gtk-3.0/classes/Window.html
         Gtk.Window.__init__(self)
 
-        self.set_title("Example")
+        self.set_title("Switches Example")
         self.connect("destroy", Gtk.main_quit)
+        self.set_size_request(350, 350)
 
             # Create List Box
             # https://lazka.github.io/pgi-docs/Gtk-3.0/classes/ListBox.html 
@@ -26,7 +27,9 @@ class MyWindow(Gtk.Window):
         box.set_header_func(Handy.list_box_separator_header)
 
             # Add some rows
-        box.add(self.addrow())
+        box.add(self.addrow("London"))
+        box.add(self.addrow("Berlin"))
+        box.add(self.addrow("Prague"))
 
             # Add List box to main window
         self.add(box)
@@ -34,18 +37,15 @@ class MyWindow(Gtk.Window):
 
     def addrow(self, title):
 
+            # https://lazka.github.io/pgi-docs/#Handy-0.0/classes/ActionRow.html
         row = Handy.ActionRow()
+        row.set_title(title)
+
+            # Add action to row
+        row.add_action(Gtk.Switch.new())
         return row
 
 
-    def addseparatorcallback(self, row, before):
-            # First row, dont add separator
-        if before == None:
-            return
-
-        if not row == None:
-                # https://lazka.github.io/pgi-docs/Gtk-3.0/enums.html#Gtk.Orientation
-            row.set_header(Gtk.Separator.new(Gtk.Orientation.HORIZONTAL))
 
 
     # https://lazka.github.io/pgi-docs/#Handy-0.0/functions.html#Handy.init 

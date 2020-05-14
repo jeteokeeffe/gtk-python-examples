@@ -44,14 +44,6 @@ class MyWindow(Gtk.Window):
 
         return row
 
-    def addseparatorcallback(self, row, before):
-            # First row, dont add separator
-        if before == None:
-            return
-
-        if not row == None:
-                # https://lazka.github.io/pgi-docs/Gtk-3.0/enums.html#Gtk.Orientation
-            row.set_header(Gtk.Separator.new(Gtk.Orientation.HORIZONTAL))
 
 
 

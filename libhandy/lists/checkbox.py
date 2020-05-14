@@ -11,6 +11,7 @@ class MyWindow(Gtk.Window):
     def __init__(self):
         Gtk.Window.__init__(self)
         self.set_title("Example")
+        self.set_size_request(300,300)
         self.connect("destroy", Gtk.main_quit)
 
             # Create List Box
@@ -23,8 +24,8 @@ class MyWindow(Gtk.Window):
         box.set_header_func(Handy.list_box_separator_header)
 
             # Add some rows
-        box.add(self.addrow( "Firefox"))
-        box.add(self.addrow( "Chrome"))
+        box.add(self.addrow("Firefox"))
+        box.add(self.addrow("Chrome"))
         box.add(self.addrow("Opera"))
 
             # Add List box to main window
