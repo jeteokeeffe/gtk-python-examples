@@ -42,7 +42,9 @@ class MyWindow(Gtk.Window):
         row.set_title(title)
 
             # Add action to row
-        row.add_action(Gtk.Switch.new())
+        switch = Gtk.Switch.new()
+        switch.set_valign(Gtk.Align.CENTER)
+        row.add_action(switch)
         return row
 
 
