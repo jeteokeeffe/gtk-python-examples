@@ -32,7 +32,9 @@ window.set_border_width(10)
     # Create a Button
     #
 button = Gtk.Button.new_from_icon_name('battery-good', Gtk.IconSize.MENU )
+button.set_label("Battery")
 button.connect("clicked", button_clicked)
+button.set_valign(Gtk.Align.CENTER)
 
     # Build Action Row
     # 
