@@ -29,10 +29,12 @@ btn4 = Gtk.Button.new_from_icon_name("process-stop", Gtk.IconSize.BUTTON)
 
     # Switch
 switch1 = Gtk.Switch()
+switch1.set_valign(Gtk.Align.CENTER)
 switch1.set_active(False)
 
     # Switch
 switch2 = Gtk.Switch()
+switch2.set_valign(Gtk.Align.CENTER)
 switch2.set_active(False)
 
     # Check Button
