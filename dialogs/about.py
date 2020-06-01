@@ -6,9 +6,9 @@ from gi.repository import Gtk
 
 
 dlg = Gtk.AboutDialog.new()
-dlg.set_authors("Author")
+dlg.set_authors(["Author1"])
 dlg.set_comments("Native GTK3 QR Scanner")
-dlg.set_documenters("Documenter")
+dlg.set_documenters(["Documenter1"])
 dlg.set_license("MIT")
 dlg.set_license_type(Gtk.License.MIT_X11)
 #dlg.set_logo()
