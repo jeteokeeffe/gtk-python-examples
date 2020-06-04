@@ -14,20 +14,27 @@ class StackWindow(Gtk.Window):
         self.add(vbox)
 
 
+            # Stack
         stack = Gtk.Stack()
+
+            # Stack Effects
         stack.set_transition_type(Gtk.StackTransitionType.SLIDE_LEFT_RIGHT)
         stack.set_transition_duration(1000)
 
+            # Stack #1
         checkbutton = Gtk.CheckButton.new_with_label("Click me!")
         stack.add_titled(checkbutton, "check", "Check Button")
 
+            # Stack #2
         label = Gtk.Label()
         label.set_markup("<big>A fancy label</big>")
         stack.add_titled(label, "label", "A label")
 
+            # Create Switcher
         stack_switcher = Gtk.StackSwitcher()
         stack_switcher.set_stack(stack)
-        #vbox.pack_start(stack_switcher, True, True, 0)
+
+            #  Add Stack to Main Vertical Box
         vbox.pack_start(stack, True, True, 0)
 
         header = Gtk.HeaderBar()
